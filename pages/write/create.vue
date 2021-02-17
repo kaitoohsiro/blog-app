@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CreateBlog from '../components/writeBlog/create'
+import CreateBlog from '../../components/writeBlog/create'
 
 export default {
   name: 'Create',
