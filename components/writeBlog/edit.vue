@@ -41,7 +41,7 @@
 <script>
 import { API, Storage } from 'aws-amplify'
 import awsmobile from '../../aws-exports'
-import { createBlog } from '../../graphql/mutations'
+import { updateBlog } from '../../graphql/mutations'
 
 export default {
   props: ['blog'],
@@ -128,15 +128,16 @@ export default {
       }
       const contents = this.handbook
       const createBlogInfo = {
+        id: this.blog.id,
         title: this.title,
         image_url: this.imageUrl,
         content: contents,
       }
       await API.graphql({
-        query: createBlog,
+        query: updateBlog,
         variables: { input: createBlogInfo },
       })
-      window.location.href = '/write'
+      window.location.href = '/detail/' + this.blog.id
     },
   },
 }
