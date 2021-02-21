@@ -32,7 +32,6 @@ export default {
         },
       })
       this.blog = detailBlog.data.getBlog
-      console.log(this.blog)
     },
   },
 }
